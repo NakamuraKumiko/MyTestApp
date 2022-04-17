@@ -1,0 +1,78 @@
+
+○GITHubアカウント
+１．
+ID：NakamuraKumiko
+メルアド：kumikon423@gmail.com
+パスワード：Yukarin514
+Personal access tokensアクセストークン？：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
+C:\Users\KUMIKON\git\testSB
+
+２．
+ID：ChanShigeChan
+メルアド：kumik423@gmail.com
+パスワード：Yukarin514
+Personal access tokensアクセストークン？：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
+
+〇自分でプロジェクトを作る
+1.ブラウザでGitHubのページにログインして
+猫マークからNewボタンをクリック
+プロジェクトネーム入れて、CreateRepository
+
+2.URLをコピー
+https://github.com/NakamuraKumiko/MyTestApp.git
+
+3.エクリプスから右クリック、チーム＞プロジェクトの共用
+Gitを選択
+一番上のチェック入れて、リポジトリの作成ボタンをクリック
+コミットする
+
+4.2でコピーしたURIを入力する
+
+〇招待するには、
+settings>collaborators
+addpeople
+メルアド入れて
+ボタンクリック
+
+
+ブラウザで、プロジェクトを開いて
+https://github.com/NakamuraKumiko/MyTestApp.git
+アドレスをコピーする
+
+インポート＞スマートインポート
+クローンURI
+URIが自動で入ってる
+
+プロジェクト＞チーム＞コミット
+IDとアクセストークンでログイン
+
+プル
+
+①プロジェクトのクローンを作成
+　（１）https://gitlab.com/へログイン
+　（２）GitLabの自分のプロジェクト名をクリック
+　（３）Cloneボタンをクリック
+　（４）CloneWithHttpsのコピーアイコンをクリック（アドレスのコピーが取れる）
+
+　（５）Eclipsのファイルメニューから「インポート」
+　　　　「Git－Gitからプロジェクト（スマートインポート）」を選択
+　　　　「次へ」をクリック
+　　　　「クローンURI」をクリック
+　　　　「次へ」をクリック
+　　　　「URI」でキーボードから、Ctrl＋Vでアドレスを貼り付け
+　　　　「次へ」をクリック
+　　　　　ログインダイアログボックスで、ユーザー名とパスワードを入力
+	「次へ」をクリック
+　　　　「完了」をクリック
+
+
+注意書き
+cloneはリモートリポジトリを初めてダウンロードするときに使います
+pullは、差分をダウンロードしてローカルに合体させます
+pushは、ローカルの差分をリモートにアップロードして合体させます
+役割分担が明確になっていると、プログラムのバッティングが発生しにくくはなります
+
+
+
+
+
