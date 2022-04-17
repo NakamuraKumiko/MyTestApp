@@ -1,0 +1,12 @@
+select * from login_user join msgdata on login_user.id = msgdata.login_user_id;
+
+select name,title,message from login_user join msgdata on login_user.id = msgdata.login_user_id;
+
+select name,title,message from login_user left join msgdata on login_user.id = msgdata.login_user_id;
+
+select msgdata.id,name,title,message from login_user join msgdata on login_user.id = msgdata.login_user_id;
+
+select min(login_user.id) as id,name,count(message) from login_user left join msgdata on login_user.id = msgdata.login_user_id group by name order by count DESC;
+
+
+

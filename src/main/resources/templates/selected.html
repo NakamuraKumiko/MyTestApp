@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<title>top page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+h1 {
+	font-size: 18pt;
+	font-weight: bold;
+	color: gray;
+}
+
+body {
+	font-size: 13pt;
+	color: gray;
+	margin: 5px 25px;
+}
+</style>
+<script th:inline="javascript">
+	function kakunin(){
+			var checkSaveFlg = window.confirm('削除を実行してもよろしいですか？');
+			if (checkSaveFlg) {
+				//alert("OKがクリックされました。");
+				return true;
+			}
+ 			else {
+				//alert("キャンセルがクリックされました。");
+				return false;
+			}
+	}
+</script>
+
+</head>
+<body>
+	<h1>Selected page</h1>
+
+	<table th:object="${member1}">
+
+		<tr>
+			<th><label for="id">ID</label></th>
+			<td th:text="*{id}"></td>
+		</tr>
+		<tr>
+			<th><label for="name">名前</label></th>
+			<td th:text="*{name}"></td>
+		</tr>
+		<tr>
+			<th><label for="age">年齢</label></th>
+			<td th:text="*{age}"></td>
+		</tr>
+		<tr>
+			<th><label for="mail">メール</label></th>
+			<td th:text="*{mail}"></td>
+		</tr>
+		<tr>
+			<th><label for="address">住所</label></th>
+			<td th:text="*{address}"></td>
+		</tr>
+		<tr>
+			<th><label for="tel">電話番号</label></th>
+			<td th:text="*{tel}"></td>
+		</tr>
+		<tr>
+			<th><label for="memo">メモ</label></th>
+			<td th:text="*{memo}"></td>
+		</tr>
+		<tr th:each="obj : *{msgdatas}">
+			<td
+				th:utext="'TITLE:'+${obj.title}+'<BR>'+ ${#dates.format(obj.datetime,'yyyy/MM/dd HH:mm')}"></td>
+			<!-- 			<td th:text="${#dates.format(obj.getDatetime(),'dd/MMM/yyyy HH:mm')}"></td> -->
+			<td th:text="${obj.message}"></td>
+		</tr>
+
+
+		<tr>
+			<td></td>
+			<td>
+				<form id="fm" method="post" action="/editdelete" th:object="${member}">
+					<!-- <input type="submit" name="button" value="編集" />  -->
+					<button class="btn btn-success" type="submit"  name="button" value="編集">編集</button>
+					<button class="btn btn-success" type="submit"  name="button" value="削除" onclick="return kakunin()">削除</button>
+					<button class="btn btn-success" type="submit"  name="button" value="コメント追加">コメント追加</button>
+					<!-- <input type="submit" name="button" id="id01" value="削除"  onclick="return kakunin()" />
+					<input type="submit" name="button" value="コメント追加" /> -->
+				</form>
+			</td>
+		</tr>
+
+	</table>
+
+	<!-- 	<p th:text="'URLから直接取得：'+${param.num[0]}"></p> -->
+
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

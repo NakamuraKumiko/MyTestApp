@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>top page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+h1 {
+	font-size: 18pt;
+	font-weight: bold;
+	color: gray;
+}
+
+body {
+	font-size: 13pt;
+	color: gray;
+	margin: 5px 25px;
+}
+</style>
+</head>
+<body>
+	<h1>Login page</h1>
+	<p th:text="${msg}">please wait...</p>
+	<form method="post" action="/login">
+<!-- 		<input type="text" name="loginid" th:value="${value}" /><br>
+		<input type="text" name="password" th:value="${value}" /> -->
+		<input type="text" name="loginid" /><br>
+		<input type="text" name="password" />
+		<input type="submit" value="ログイン" />
+	</form>
+
+</body>
+</html>

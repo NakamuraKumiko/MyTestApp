@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>top page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+h1 {
+	font-size: 18pt;
+	font-weight: bold;
+	color: gray;
+}
+
+body {
+	font-size: 13pt;
+	color: gray;
+	margin: 5px 25px;
+}
+</style>
+</head>
+<body>
+	<h1>コメント追加 page</h1>
+
+	<table th:object="${member}">
+
+		<tr>
+			<th><label for="id">ID</label></th>
+			<td th:text="*{id}"></td>
+		</tr>
+		<tr>
+			<th><label for="name">名前</label></th>
+			<td th:text="*{name}"></td>
+		</tr>
+		<tr>
+			<th><label for="age">年齢</label></th>
+			<td th:text="*{age}"></td>
+		</tr>
+		<tr>
+			<th><label for="mail">メール</label></th>
+			<td th:text="*{mail}"></td>
+		</tr>
+		<tr>
+			<th><label for="address">住所</label></th>
+			<td th:text="*{address}"></td>
+		</tr>
+		<tr>
+			<th><label for="tel">電話番号</label></th>
+			<td th:text="*{tel}"></td>
+		</tr>
+		<tr>
+			<th><label for="memo">メモ</label></th>
+			<td th:text="*{memo}"></td>
+		</tr>
+
+<!-- 		<tr>
+			<td></td>
+			<td>
+				<form method="post" action="/editdelete" th:object="${member}">
+					<input type="submit" name="button" value="編集" />
+					<input type="submit" name="button" value="削除" />
+					<input type="submit" name="button" value="コメント追加" />
+				</form>
+			</td>
+		</tr> -->
+
+	</table>
+
+	<table>
+		<form method="post" action="/comment" th:object="${formModel}">
+			<tr>
+				<td><label for="title">タイトル</label></td>
+				<td><input type="text" name="title" th:value="*{title}" /></td>
+			</tr>
+			<tr>
+				<td><label for="message">メッセージ</label></td>
+				<td><textarea name="message" th:text="*{message}"></textarea></td>
+			</tr>
+
+		<tr>
+			<td></td>
+			<td><input type="submit" value="コメント追加" /></td>
+		</tr>
+		</form>
+	</table>
+
+</body>
+</html>

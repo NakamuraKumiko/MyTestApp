@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<title>top page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+h1 {
+	font-size: 18pt;
+	font-weight: bold;
+	color: gray;
+}
+
+body {
+	font-size: 13pt;
+	color: gray;
+	margin: 5px 25px;
+}
+</style>
+</head>
+<body>
+	<h1>Result page</h1>
+<!-- 	<p class="msg" th:text="'キーワードは、'+${value}"></p> -->
+	<!-- 	<pre th:text="${data}"></pre> -->
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>名前</th>
+			<th>メール</th>
+			<th>年齢</th>
+		</tr>
+		<tr th:each="obj : ${datalist}">
+			<td th:text="${obj.id}"></td>
+			<td><a th:href="@{'/select?num=' + ${obj.id}}">[[${obj.name}]]</a></td>
+			<td th:text="${obj.mail}"></td>
+			<td th:text="${obj.age}"></td>
+		</tr>
+	</table>
+	<br/>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>名前</th>
+			<th>メール</th>
+			<th>年齢</th>
+		</tr>
+		<tr th:object="${memberbyid}">
+			<td th:text="*{id}"></td>
+			<td th:text="*{name}"></td>
+			<td th:text="*{mail}"></td>
+			<td th:text="*{age}"></td>
+		</tr>
+	</table>
+	<br/>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>名前</th>
+			<th>メール</th>
+			<th>年齢</th>
+		</tr>
+		<tr th:each="obj : ${datalist2}">
+			<td th:text="${obj.id}"></td>
+			<td th:text="${obj.name}"></td>
+			<td th:text="${obj.mail}"></td>
+			<td th:text="${obj.age}"></td>
+		</tr>
+	</table>
+
+	<p>
+		<!-- 		<a th:href="@{'/select?num=' + ${value}}">link</a> -->
+		<a th:href="@{'/'}">戻る</a>
+	</p>
+
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+</html>
