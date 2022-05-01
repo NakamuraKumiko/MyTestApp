@@ -15,6 +15,7 @@
 </head>
 <body>
 <p th:if="${session.user != null}" th:text="${session.user.name}+'さん ようこそ！'">message.</p>
+	<div th:include="header :: frag_body"></div>
 	<h1>Top page</h1>
 	<p th:text="${msg}">please wait...</p>
 	<form method="post" action="/">
