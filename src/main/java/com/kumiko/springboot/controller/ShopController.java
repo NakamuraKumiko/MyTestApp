@@ -55,8 +55,8 @@ public class ShopController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView index(ModelAndView mav) {
 		//LoginUser loginUser = (LoginUser) session.getAttribute("user");
-		//mav.setViewName("top");
-		mav.setViewName("header");
+		mav.setViewName("top");
+		//mav.setViewName("header");
 		mav.addObject("msg", "検索ワードを入力してください。");
 		return mav;
 	}
