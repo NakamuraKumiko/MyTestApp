@@ -76,7 +76,7 @@ public class ShopController {
 			list = repository.findByNameLikeOrAddressLike("%" + str + "%", "%" + str + "%");
 		}
 		mav.addObject("data", list);
-		mav.setViewName("result");
+		mav.setViewName("result2");
 		return mav;
 	}
 
